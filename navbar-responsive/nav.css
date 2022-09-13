@@ -1,0 +1,120 @@
+/* Basic styling */
+* {
+  box-sizing: border-box;  
+  
+  /* a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.*/
+
+  padding: 0;
+  margin: 0;
+}
+
+
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+nav {
+  background: black;
+  padding: 6px 25px; 
+    /* top and bottom = 6px
+    right and left = 20px  */
+}
+
+ul{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.menu li{
+  font-size: 16px;
+  padding: 15px 5px;
+}
+.logo a{
+font-size: 20px;
+}
+
+/* Mobile view  */
+
+.menu{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+align-items: center;
+}
+
+.item{
+  width: 100%;
+  text-align: center;
+  order: 2;
+  display: none;
+}
+.item.show{
+  display: block;
+}
+
+/* Navabar Toggle */
+.icon{
+  height: 3px;
+  width: 30px;
+  background-color: gray;
+  position: relative;
+  display: inline-block;
+
+}
+.icon::before, .icon::after{
+  height: 100%;
+  width: 100%;
+  content: "";
+  background-color: gray;
+  position: absolute;
+  display: inline-block;
+}
+.icon::before{
+  top: 8px;
+}
+.icon::after{
+  top: -8px;
+}
+/* Tablet view */
+@media all and (min-width:460px){
+  .menu{
+    justify-content: center;
+  }
+  .logo{
+    flex: 1;
+  }
+  .item.button{
+    width: auto;
+    order: 1;
+  }
+.toggle{
+  order: 1;
+}
+.button a{
+  padding: 8px 15px;
+  border: solid 1px white;
+  border-radius: 50px;
+  transition: all .5s;
+}
+.button a:hover{
+  transition: all .5s;
+  background-color: white;
+  color: white;
+}
+}
+
+/* Desktop view  */
+@media all and (min-width:768px){
+  .item{
+width: auto;
+order: 1;  
+}
+  .icon{
+    display: none;
+  }
+  .menu li{
+    padding: 15px 10px;
+  }
+
+}
